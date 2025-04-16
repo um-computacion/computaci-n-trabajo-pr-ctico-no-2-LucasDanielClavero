@@ -7,6 +7,19 @@ def is_palindrome(texto):
         if caracter not in [" ", ",", ".", ":", ";", "!", "?", "'", "\"", "-", "(", ")", "[", "]", "{", "}", "_"]:
             texto_limpio += caracter.lower()
         contador += 1
-        
-    return False
+
+    texto_invertido = texto_limpio[::-1]
+
+    if texto_limpio == texto_invertido:
+        return True
+    else:
+        return False
+    
+texto_ingresado = str(input("Ingrese una palabra o frase"))
+
+analisar = is_palindrome(texto_ingresado)
+if analisar == True:
+    print(f"{texto_ingresado} es un palíndromo")
+else:
+    print(f"{texto_ingresado} no es un palíndromo")
 
